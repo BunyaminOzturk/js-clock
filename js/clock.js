@@ -9,6 +9,9 @@ function saatiGoster(){
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
+    const days = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"]
+    let dayNo = now.getDay();
+    let dayName = days[dayNo-1];
 
     function ondanKucukse(i){
         if(i < 10)
@@ -20,7 +23,7 @@ function saatiGoster(){
     minutes = ondanKucukse(minutes);
     seconds = ondanKucukse(seconds);
 
-    let anlikSaat = `${hours}:${minutes}:${seconds}`;
+    let anlikSaat = `${hours}:${minutes}:${seconds} ${dayName}`;
     //console.log(anlikSaat);
 
     let saat = document.getElementById('myClock');
